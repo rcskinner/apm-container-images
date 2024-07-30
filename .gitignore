@@ -1,1 +1,5 @@
-.vevn
+# Python stuff 
+*/.venv
+
+# Datadog SCA Config
+static-analysis.datadog.yml
