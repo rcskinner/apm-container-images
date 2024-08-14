@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: pyapp
   name: pyapp
   labels:
     app: pyapp
@@ -25,6 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: pyapp
   name: pyapp-service
 spec:
   type: NodePort
