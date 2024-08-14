@@ -2,7 +2,7 @@ apiVersion: datadoghq.com/v2alpha1
 kind: DatadogAgent
 metadata:
   name: datadog
-#  namespace: datadog
+  namespace: datadog
 spec:
   global:
     clusterName: lab  
@@ -35,16 +35,16 @@ spec:
       enabled: true
       instrumentation:
         enabled: true
-          #libVersions:
-          #python: "v2.10.3"
-          #        languageDetection:
-          #enabled: true
+        enabledNamespaces:
+          - pyapp
+        libVersions:
+          python: v2.10.4
     cspm:
-      enabled: false
+      enabled: true
     cws:
-      enabled: false
+      enabled: true
     npm:
-      enabled: false
+      enabled: true
     usm:
       enabled: false
     dogstatsd:
