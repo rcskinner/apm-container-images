@@ -21,6 +21,11 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 80
+      env: 
+        - name: REDIS_HOST
+          value: redis-service.redis.svc.cluster.local
+        - name: REDIS_PORT
+          value: 6379
 ---
 
 apiVersion: v1

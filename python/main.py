@@ -1,11 +1,14 @@
 import json
+import os 
 
 from fastapi import FastAPI
 from redis import ConnectionPool, Redis
 from pydantic import BaseModel
 
 # Create the Redis Connection
-pool = ConnectionPool(host="localhost", port=6379, db=0)
+REDIS_HOST = os.environ.get("REDIS_HOST")
+REDIS_PORT = os.environ.get("REDIS_PORT")
+pool = ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=0)
 r = Redis(connection_pool=pool)
 
 
